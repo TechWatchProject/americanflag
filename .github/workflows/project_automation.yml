@@ -1,0 +1,14 @@
+name: project-automation
+on:
+  issues:
+    types: [opened, closed, reopened]
+  pull_request_target:
+    types: [opened, closed, reopened, converted_to_draft, ready_for_review]
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    uses: TechWatchProject/.github/.github/workflows/project_automation.yml@main
+    secrets: inherit
